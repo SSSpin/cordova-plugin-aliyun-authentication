@@ -1,0 +1,29 @@
+{  
+  "name": "cordova-plugin-zhima-verify",  
+  "version": "1.0.0",  
+  "description": "zhima verify",  
+  "cordova": {  
+    "id": "cordova-plugin-zhima-verify",  
+    "platforms": [  
+      "android"  
+    ]  
+  },  
+  "repository": {  
+    "type": "",  
+    "url": ""  
+  },  
+  "keywords": [  
+    "cordova",  
+    "zhima",  
+    "verify",  
+    "phonegap",  
+    "ecosystem:cordova",  
+    "cordova-android"  
+  ],  
+  "author": "",  
+  "license": "Apache 2.0",  
+  "bugs": {  
+    "url": ""  
+  },  
+  "homepage": ""  
+}  
