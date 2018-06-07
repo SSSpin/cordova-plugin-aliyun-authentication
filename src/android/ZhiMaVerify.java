@@ -68,7 +68,7 @@ public class ZhiMaVerify extends CordovaPlugin implements ZMCertificationListene
      */
     private void  startCertification(String var2, String var3){
         //set listener
-        ZMCertification.getInstance().setZMCertificationListener(ZhiMaVertificationPlugin.this);
+        ZMCertification.getInstance().setZMCertificationListener(ZhiMaVerify.this);
         //start certification
         ZMCertification.getInstance().startCertification(cordova.getActivity(), var2, var3, null);
     }
