@@ -1,4 +1,4 @@
-package cordova.plugin.zhima.verify;
+package com.zhima.cordova.verify;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
