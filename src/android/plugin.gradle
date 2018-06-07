@@ -2,7 +2,7 @@
 repositories {
     jcenter()
     flatDir {
-      dirs 'libs'
+      dirs '../app/src/main/libs'
     }
 }
 
