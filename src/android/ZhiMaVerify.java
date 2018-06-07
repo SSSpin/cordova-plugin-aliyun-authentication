@@ -39,11 +39,10 @@ public class ZhiMaVerify extends CordovaPlugin implements ZMCertificationListene
 
             return true;
         }else if(action.equals("ZMCertification.startCertification")){
-
             this.callbackContext = callbackContext;
-
-            startCertification("ZM201612013000000393900404029253","merchannt_Id");
-
+            
+            String bizNo = args.getString(0);
+            startCertification(bizNo,"merchannt_Id");
             return true;
         }else if(action.equals("ZMCertificationListener.onFinish")){
 
