@@ -2,7 +2,7 @@
 <plugin id="cordova-plugin-zhima-verify" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
     <name>ZhiMaVerify</name>
     <js-module name="ZhiMaVerify" src="www/ZhiMaVerify.js">
-        <clobbers target="cordova.plugins.ZhiMaVerify" />
+        <clobbers target="com.zhima.cordova.verify.ZhiMaVerify" />
     </js-module>
     
     <platform name="android">
@@ -16,8 +16,6 @@
             <uses-permission android:name="android.permission.INTERNET" />
             <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
             <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-            <uses-permission android:name="android.permission.CAMERA" />
-            <uses-permission android:name="android.permission.INTERNET" />
             <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
         </config-file>
         <source-file src="src/android/ZhiMaVerify.java" target-dir="src/com/zhima/cordova/verify" />
