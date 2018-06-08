@@ -26,28 +26,28 @@ public class ZhiMaVerify extends CordovaPlugin implements ZMCertificationListene
             String message = args.getString(0);
             this.coolMethod(message, callbackContext);
             return true;
-        }else if(action.equals("ZMCertification.getVersion")){
+        }else if(action.equals("getVersion")){
             callbackContext.success("aaaa");
             return true;
-        }else if(action.equals("ZMCertification.getBuildInfo")){
+        }else if(action.equals("getBuildInfo")){
             callbackContext.success(ZMCertification.getInstance().getBuildInfo());
             return true;
-        }else if(action.equals("ZMCertification.setZMCertificationListener")){
+        }else if(action.equals("setZMCertificationListener")){
 
             return true;
-        }else if(action.equals("ZMCertification.setZMRecordVideoListener")){
+        }else if(action.equals("setZMRecordVideoListener")){
 
             return true;
-        }else if(action.equals("ZMCertification.startCertification")){
+        }else if(action.equals("startCertification")){
             this.callbackContext = callbackContext;
-            
+
             String bizNo = args.getString(0);
             startCertification(bizNo,"merchannt_Id");
             return true;
-        }else if(action.equals("ZMCertificationListener.onFinish")){
+        }else if(action.equals("onFinish")){
 
             return true;
-        }else if(action.equals("ZMCertificationListener.onRecordVideoFinish")){
+        }else if(action.equals("onRecordVideoFinish")){
 
             return true;
         }
