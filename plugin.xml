@@ -20,7 +20,7 @@
         </config-file>
         
         <source-file src="src/android/AliyunVerify.java" target-dir="src/com/aliyun/cordova/verify" />
-        
+
         <resource-file src="src/android/libs/aliyun-oss-sdk-android-2.2.0.jar" target="libs/aliyun-oss-sdk-android-2.2.0.jar" />
         <resource-file src="src/android/libs/okhttp-3.2.0.jar" target="libs/okhttp-3.2.0.jar" />
         <resource-file src="src/android/libs/okio-1.6.0.jar" target="libs/okio-1.6.0.jar" />
@@ -47,12 +47,8 @@
         <header-file src="src/ios/AliyunVerify.h" />
         <source-file src="src/ios/AliyunVerify.m" />
         <!-- assets -->
-        <resource-file src="src/ios/ZMCert/ZMCert.bundle" />
+        
         <!-- framework -->
-        <framework src="src/ios/ZMCert/ZMCert.framework" custom="true" />
-        <framework src="CoreMedia.framework" />
-        <framework src="AVFoundation.framework" />
-        <framework src="WebKit.framework" />
-        <framework src="CoreMotion.framework" />
+    
     </platform>
 </plugin>
