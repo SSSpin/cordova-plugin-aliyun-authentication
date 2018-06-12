@@ -12,6 +12,9 @@ import java.util.HashMap;
 import java.util.Random;
 import com.zmxy.ZMCertification;
 import com.zmxy.ZMCertificationListener;
+import com.alibaba.security.rp.RPSDK;
+
+
 
 /**
  * This class echoes a string called from JavaScript.
@@ -22,6 +25,10 @@ public class ZhiMaVerify extends CordovaPlugin implements ZMCertificationListene
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
+
+        RPSDK.initialize(cordova.getActivity().getApplicationContext());
+
+
         if (action.equals("coolMethod")) {
             String message = args.getString(0);
             this.coolMethod(message, callbackContext);
@@ -41,8 +48,8 @@ public class ZhiMaVerify extends CordovaPlugin implements ZMCertificationListene
         }else if(action.equals("startCertification")){
             this.callbackContext = callbackContext;
 
-            String bizNo = args.getString(0);
-            startCertification(bizNo,"merchannt_Id");
+            String token = args.getString(0);
+            startCertification(token);
             return true;
         }else if(action.equals("onFinish")){
 
@@ -65,11 +72,36 @@ public class ZhiMaVerify extends CordovaPlugin implements ZMCertificationListene
     var2 bizNo
     var3 merchantId
      */
-    private void  startCertification(String var2, String var3){
-        //set listener
-        ZMCertification.getInstance().setZMCertificationListener(ZhiMaVerify.this);
-        //start certification
-        ZMCertification.getInstance().startCertification(cordova.getActivity(), var2, var3, null);
+    private void  startCertification(String var2){
+
+        ZhiMaVerify self = this;
+        cordova.getActivity().runOnUiThread(new Runnable() {
+            public  void run(){
+                RPSDK.start(var2,cordova.getActivity(), new RPSDK.RPCompletedListener() {
+                    @Override
+                    public void onAuditResult(RPSDK.AUDIT audit) {
+                        Toast.makeText(cordova.getActivity(), audit + "", Toast.LENGTH_SHORT).show();
+                        if(audit == RPSDK.AUDIT.AUDIT_PASS) { //认证通过
+                            self.callbackContext.success(0);
+                        }
+                        else if(audit == RPSDK.AUDIT.AUDIT_FAIL) { //认证不通过
+                            self.callbackContext.error(1);
+                        }
+                        else if(audit == RPSDK.AUDIT.AUDIT_IN_AUDIT) { //认证中，通常不会出现，只有在认证审核系统内部出现超时，未在限定时间内返回认证结果时出现。此时提示用户系统处理中，稍后查看认证结果即可。
+                            self.callbackContext.error(2);
+                        }
+                        else if(audit == RPSDK.AUDIT.AUDIT_NOT) { //未认证，用户取消
+                            self.callbackContext.error(3);
+                        }
+                        else if(audit == RPSDK.AUDIT.AUDIT_EXCEPTION){ //系统异常
+                            self.callbackContext.error(4);
+                        }
+                    }
+                });
+            }
+        });
+
+
     }
 
     @Override

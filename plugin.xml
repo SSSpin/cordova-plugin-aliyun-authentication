@@ -18,8 +18,19 @@
             <uses-permission android:name="android.permission.INTERNET" />
             <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
         </config-file>
+        
         <source-file src="src/android/ZhiMaVerify.java" target-dir="src/com/zhima/cordova/verify" />
-        <resource-file src="src/android/libs/ZMCert_SDK.aar" target="libs/ZMCert_SDK.aar" />
+        <resource-file src="src/android/libs/aliyun-oss-sdk-android-2.2.0.jar" target="libs/aliyun-oss-sdk-android-2.2.0.jar" />
+        <resource-file src="src/android/libs/okhttp-3.2.0.jar" target="libs/okhttp-3.2.0.jar" />
+        <resource-file src="src/android/libs/okio-1.6.0.jar" target="libs/okio-1.6.0.jar" />
+
+
+        <resource-file src="src/android/libs/FaceLivenessOpen-2.1.6.9.aar" target="libs/FaceLivenessOpen-2.1.6.9.aar" />
+        <resource-file src="src/android/libs/rpsdk-release_2.4.0.2.aar" target="libs/rpsdk-release_2.4.0.2.aar" />
+        <resource-file src="src/android/libs/NoCaptchaSDK-external-release-5.4.18.aar" target="libs/NoCaptchaSDK-external-release-5.4.18.aar" />
+        <resource-file src="src/android/libs/SecurityGuardSDK-external-release-5.4.38.aar" target="libs/SecurityGuardSDK-external-release-5.4.38.aar" />
+        <resource-file src="src/android/libs/SecurityBodySDK-external-release-5.4.28.aar" target="libs/SecurityBodySDK-external-release-5.4.28.aar" />
+
     </platform>
     <platform name="ios">
         <config-file parent="/*" target="config.xml">

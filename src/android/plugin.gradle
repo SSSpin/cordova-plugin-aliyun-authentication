@@ -7,5 +7,14 @@ repositories {
 }
 
 dependencies {
-     compile (name:'ZMCert_SDK',ext:'aar')
+	implementation files('aliyun-oss-sdk-android-2.2.0.jar')
+    implementation files('okhttp-3.2.0.jar')
+    implementation files('okio-1.6.0.jar')
+    implementation files('windvane-min-8.0.3.2.3.jar')
+
+    compile (name:'FaceLivenessOpen-2.1.6.9',ext:'aar')
+    compile (name:'rpsdk-release_2.4.0.2',ext:'aar')
+    compile (name:'SecurityGuardSDK-external-release-5.4.38',ext:'aar')
+    compile (name:'SecurityBodySDK-external-release-5.4.28',ext:'aar')
+    compile (name:'NoCaptchaSDK-external-release-5.4.18',ext:'aar')
 }
