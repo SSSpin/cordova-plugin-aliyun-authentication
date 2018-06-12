@@ -35,7 +35,7 @@ public class AliyunVerify extends CordovaPlugin {
             callbackContext.success("aaaa");
             return true;
         }else if(action.equals("getBuildInfo")){
-            callbackContext.success(ZMCertification.getInstance().getBuildInfo());
+            callbackContext.success("");
             return true;
         }else if(action.equals("startCertification")){
             this.callbackContext = callbackContext;
