@@ -1,4 +1,4 @@
-package com.zhima.cordova.verify;
+package com.aliyun.cordova.verify;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
@@ -10,8 +10,6 @@ import android.widget.Toast;
 
 import java.util.HashMap;
 import java.util.Random;
-import com.zmxy.ZMCertification;
-import com.zmxy.ZMCertificationListener;
 import com.alibaba.security.rp.RPSDK;
 
 
@@ -19,7 +17,7 @@ import com.alibaba.security.rp.RPSDK;
 /**
  * This class echoes a string called from JavaScript.
  */
-public class ZhiMaVerify extends CordovaPlugin implements ZMCertificationListener {
+public class AliyunVerify extends CordovaPlugin {
 
     private CallbackContext callbackContext;
 
@@ -38,12 +36,6 @@ public class ZhiMaVerify extends CordovaPlugin implements ZMCertificationListene
             return true;
         }else if(action.equals("getBuildInfo")){
             callbackContext.success(ZMCertification.getInstance().getBuildInfo());
-            return true;
-        }else if(action.equals("setZMCertificationListener")){
-
-            return true;
-        }else if(action.equals("setZMRecordVideoListener")){
-
             return true;
         }else if(action.equals("startCertification")){
             this.callbackContext = callbackContext;
@@ -74,7 +66,7 @@ public class ZhiMaVerify extends CordovaPlugin implements ZMCertificationListene
      */
     private void  startCertification(String var2){
 
-        ZhiMaVerify self = this;
+        AliyunVerify self = this;
         cordova.getActivity().runOnUiThread(new Runnable() {
             public  void run(){
                 RPSDK.start(var2,cordova.getActivity(), new RPSDK.RPCompletedListener() {
@@ -102,14 +94,6 @@ public class ZhiMaVerify extends CordovaPlugin implements ZMCertificationListene
         });
 
 
-    }
-
-    @Override
-    public void onFinish(boolean isCanceled, boolean isPassed, int errorCode) {
-        Boolean ispassed = isPassed;
-        Boolean iscanceled = isCanceled;
-        ZMCertification.getInstance().setZMCertificationListener(null);
-        this.callbackContext.success(ispassed.toString());
     }
 
 }

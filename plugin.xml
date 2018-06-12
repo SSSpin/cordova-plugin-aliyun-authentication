@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="cordova-plugin-zhima-verify" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
-    <name>ZhiMaVerify</name>
-    <js-module name="ZhiMaVerify" src="www/ZhiMaVerify.js">
-        <clobbers target="cordova.plugins.ZhiMaVerify" />
+<plugin id="cordova-plugin-aliyun-authentication" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>AliyunVerify</name>
+    <js-module name="AliyunVerify" src="www/AliyunVerify.js">
+        <clobbers target="cordova.plugins.AliyunVerify" />
     </js-module>
     <platform name="android">
         <framework src="src/android/plugin.gradle" custom="true" type="gradleReference" />
         <config-file parent="/*" target="res/xml/config.xml">
-            <feature name="ZhiMaVerify">
-                <param name="android-package" value="com.zhima.cordova.verify.ZhiMaVerify" />
+            <feature name="AliyunVerify">
+                <param name="android-package" value="com.aliyun.cordova.verify.AliyunVerify" />
             </feature>
         </config-file>
         <config-file parent="/*" target="AndroidManifest.xml">
@@ -19,7 +19,8 @@
             <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
         </config-file>
         
-        <source-file src="src/android/ZhiMaVerify.java" target-dir="src/com/zhima/cordova/verify" />
+        <source-file src="src/android/AliyunVerify.java" target-dir="src/com/aliyun/cordova/verify" />
+        
         <resource-file src="src/android/libs/aliyun-oss-sdk-android-2.2.0.jar" target="libs/aliyun-oss-sdk-android-2.2.0.jar" />
         <resource-file src="src/android/libs/okhttp-3.2.0.jar" target="libs/okhttp-3.2.0.jar" />
         <resource-file src="src/android/libs/okio-1.6.0.jar" target="libs/okio-1.6.0.jar" />
@@ -34,8 +35,8 @@
     </platform>
     <platform name="ios">
         <config-file parent="/*" target="config.xml">
-            <feature name="ZhiMaVerify">
-                <param name="ios-package" value="ZhiMaVerify" />
+            <feature name="AliyunVerify">
+                <param name="ios-package" value="AliyunVerify" />
             </feature>
         </config-file>
         <!-- auth -->
@@ -43,8 +44,8 @@
             <string>The camera is used to Certificate.</string>
         </config-file>
         <!-- source header file -->
-        <header-file src="src/ios/ZhiMaVerify.h" />
-        <source-file src="src/ios/ZhiMaVerify.m" />
+        <header-file src="src/ios/AliyunVerify.h" />
+        <source-file src="src/ios/AliyunVerify.m" />
         <!-- assets -->
         <resource-file src="src/ios/ZMCert/ZMCert.bundle" />
         <!-- framework -->

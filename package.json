@@ -1,11 +1,12 @@
 {  
-  "name": "cordova-plugin-zhima-verify",  
+  "name": "cordova-plugin-aliyun-authentication",  
   "version": "1.0.0",  
-  "description": "zhima verify",  
+  "description": "aliyun verify",  
   "cordova": {  
-    "id": "cordova-plugin-zhima-verify",  
+    "id": "cordova-plugin-aliyun-authentication",  
     "platforms": [  
-      "android"  
+      "android",
+      "ios"  
     ]  
   },  
   "repository": {  
