@@ -43,22 +43,42 @@
         <header-file src="src/ios/AliyunVerify.h" />
         <source-file src="src/ios/AliyunVerify.m" />
         <!-- assets -->
-        <asset src="src/ios/libs/FaceLivenessSDK.bundle" target="FaceLivenessSDK.bundle" />
-        <asset src="src/ios/libs/FaceTheme.bundle" target="FaceTheme.bundle" />
-        <asset src="src/ios/libs/RPSDK.bundle" target="RPSDK.bundle" /> \
+        <resource-file src="src/ios/libs/FaceLivenessSDK.bundle" />
+        <resource-file src="src/ios/libs/FaceTheme.bundle" />
+        <resource-file src="src/ios/libs/RPSDK.bundle" />
         <!-- framework -->
-        <framework src="src/ios/libs/AliReachability.framework" />
-        <framework src="src/ios/libs/AliyunOSSiOS.framework" />
-        <framework src="src/ios/libs/FaceLivenessOpen.framework" />
-        <framework src="src/ios/libs/RPSDK.framework" />
-        <framework src="src/ios/libs/SecurityGuardSDK.framework" />
-        <framework src="src/ios/libs/SGMain.framework" />
-        <framework src="src/ios/libs/SGNoCaptcha.framework" />
-        <framework src="src/ios/libs/SGSecurityBody.framework" />
-        <framework src="src/ios/libs/WindVane.framework" />
-        <framework src="src/ios/libs/WindVaneBasic.framework" />
-        <framework src="src/ios/libs/WindVaneBridge.framework" />
-        <framework src="src/ios/libs/WindVaneCore.framework" />
-        <framework src="src/ios/libs/ZipArchive.framework" />
+
+        <framework src="CoreMedia.framework" />
+        <framework src="CoreMotion.framework" />
+        <framework src="CoreTelephony.framework" />
+        <framework src="AVFoundation.framework" />
+        <framework src="ImageIO.framework" />
+        <framework src="MobileCoreServices.framework" />
+        <framework src="MediaPlayer.framework" />
+        <framework src="CoreLocation.framework" />
+        <framework src="AddressBook.framework" />
+        <framework src="AddressBookUI.framework" />
+        <framework src="SystemConfiguration.framework" />
+        <framework src="AudioToolbox.framework" />
+        <framework src="AssetsLibrary.framework" />
+        <framework src="Libresolv.tbd" />
+        <framework src="WebKit.framework" />
+        <framework src="Libiconv.tbd" />
+        <framework src="Libc++.tbd" />
+        <framework src="Libz.tbd" />
+      
+        <framework src="src/ios/libs/AliReachability.framework" custom="true" />
+        <framework src="src/ios/libs/AliyunOSSiOS.framework" custom="true" />
+        <framework src="src/ios/libs/FaceLivenessOpen.framework" custom="true" />
+        <framework src="src/ios/libs/RPSDK.framework" custom="true" />
+        <framework src="src/ios/libs/SecurityGuardSDK.framework" custom="true" />
+        <framework src="src/ios/libs/SGMain.framework" custom="true" />
+        <framework src="src/ios/libs/SGNoCaptcha.framework" custom="true" />
+        <framework src="src/ios/libs/SGSecurityBody.framework" custom="true" />
+        <framework src="src/ios/libs/WindVane.framework" custom="true" />
+        <framework src="src/ios/libs/WindVaneBasic.framework" custom="true" />
+        <framework src="src/ios/libs/WindVaneBridge.framework" custom="true" />
+        <framework src="src/ios/libs/WindVaneCore.framework" custom="true" />
+        <framework src="src/ios/libs/ZipArchive.framework" custom="true" />
     </platform>
 </plugin>

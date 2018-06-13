@@ -1,22 +1,11 @@
-/********* ZhiMaVerify.m Cordova Plugin Implementation *******/
-#import <UIKit/UIKit.h>
-#import "ZhiMaVerify.h"
-#import <ZMCert/ZMCert.h>
-#import <AssetsLibrary/AssetsLibrary.h>
+/********* AliyunVerify.m Cordova Plugin Implementation *******/
 
-
+#import "AliyunVerify.h"
 #define IsZMCertVideo true
 
-@interface ZhiMaVerify()
-
-@property (weak, nonatomic)  NSString *bizNo;
-@property (weak, nonatomic)  NSString *merchantId;
-@property (weak, nonatomic) IBOutlet UILabel *resultView;
-@end
 
 
-
-@implementation ZhiMaVerify
+@implementation AliyunVerify
 
 - (void)coolMethod:(CDVInvokedUrlCommand*)command
 {
@@ -33,90 +22,32 @@
 }
 
 
-- (void) onFinish:(CDVInvokedUrlCommand*) command
-{
-    CDVPluginResult* pluginResult = nil;
-    NSString* echo = [command.arguments objectAtIndex:0];
-    
-    if (echo != nil && [echo length] > 0) {
-        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:echo];
-    } else {
-        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
-    }
-    
-    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
-}
-
 #pragma mark - Start Detect
 - (IBAction)startCertification:(CDVInvokedUrlCommand*)command {
-    ZMCertification *manager = [[ZMCertification alloc] init];
-    __weak ZhiMaVerify *weakSelf = self;
+   
+    __weak AliyunVerify *weakSelf = self;
     
-    NSString* bizNo = [command.arguments objectAtIndex:0];
+    NSString* verifyToken = [command.arguments objectAtIndex:0];
 
-    
-#if IsZMCertVideo
-    //  录制动作检测录像
-    [manager startVideoWithBizNO:bizNo
-                      merchantID:self.merchantId
-                       extParams:@{@"RecordVideo" : [NSNumber numberWithBool:YES]}
-                  viewController:super.viewController
-                        onFinish:^(BOOL isCanceled, BOOL isPassed, ZMStatusErrorType errorCode, NSString * _Nullable videoPath) {
-                            CDVPluginResult* pluginResult = nil;
-                            if (videoPath) {
-                                ALAssetsLibrary *assetsLibrary = [[ALAssetsLibrary alloc]init];
-                                [assetsLibrary writeVideoAtPathToSavedPhotosAlbum:[NSURL fileURLWithPath:videoPath]
-                                                                  completionBlock:^(NSURL *assetURL, NSError *error) {
-                                                                      if (error) {
-                                                                          NSLog(@"Save video fail:%@",error);
-                                                                      } else {
-                                                                          NSLog(@"Save video succeed.");
-                                                                      }
-                                                                  }];
-                            }
-                            if (isCanceled) {
-                                NSLog(@"用户取消了认证");
-                                weakSelf.resultView.text = [NSString stringWithFormat:@"用户取消了认证！"];
-                                pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"cancel"];
-                            } else {
-                                if (isPassed) {
-                                    NSLog(@"认证成功");
-                                    weakSelf.resultView.text = [NSString stringWithFormat:@"认证成功"];
-                                    pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"success"];
-                                   
-                                } else {
-                                    NSLog(@"认证失败了 %zi", errorCode);
-                                    weakSelf.resultView.text = [NSString stringWithFormat:@"认证中出现问题--%zi", errorCode];
-                                    pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"failed"];
-                                }
-                            }
-                             [weakSelf.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
-                        }];
-#else
-    //  不进行动作检测视频录制
-    [manager startWithBizNO:bizNo
-                 merchantID:self.merchantId
-                  extParams:nil
-             viewController:self
-                   onFinish:^(BOOL isCanceled, BOOL isPassed, ZMStatusErrorType errorCode) {
-                        CDVPluginResult* pluginResult = nil;
-                       if (isCanceled) {
-                           NSLog(@"用户取消了认证");
-                           weakSelf.resultView.text = [NSString stringWithFormat:@"用户取消了认证！"];
-                           pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"cancel"];
-                       }else{
-                           if (isPassed) {
-                               NSLog(@"认证成功");
-                               weakSelf.resultView.text = [NSString stringWithFormat:@"认证成功"];
-                               pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"success"];
-                           }else{
-                               NSLog(@"认证失败了 %zi", errorCode);
-                               weakSelf.resultView.text = [NSString stringWithFormat:@"认证中出现问题--%zi", errorCode];
-                               pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:@"failed"];
-                           }
-                       }
-                        [weakSelf.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
-                   }];
-#endif
+    [RPSDK start:verifyToken rpCompleted:^(AUDIT auditState) {
+        NSLog(@"verifyResult = %ld",(unsigned long)auditState);
+         CDVPluginResult* pluginResult = nil;
+        if(auditState == AUDIT_PASS) { //认证通过
+             pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:0];
+        }
+        else if(auditState == AUDIT_FAIL) { //认证不通过
+            pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"1"];
+        }
+        else if(auditState == AUDIT_IN_AUDIT) { //认证中，通常不会出现，只有在认证审核系统内部出现超时，未在限定时间内返回认证结果时出现。此时提示用户系统处理中，稍后查看认证结果即可。
+            pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"2"];
+        }
+        else if(auditState == AUDIT_NOT) { //未认证，用户取消
+            pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"3"];
+        }
+        else if(auditState == AUDIT_EXCEPTION) { //系统异常
+            pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"4"];
+        }
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+    }withVC:self.viewController];
 }
 @end
