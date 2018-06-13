@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/repos/verifywireless/!svn/ver/1455/trunk/rpsdk-ios/Libs/notb/SecurityGuardSDK.framework/Headers/Open/OpenNoCaptcha
+END
+OpenNoCaptchaDefine.h
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/repos/verifywireless/!svn/ver/1455/trunk/rpsdk-ios/Libs/notb/SecurityGuardSDK.framework/Headers/Open/OpenNoCaptcha/OpenNoCaptchaDefine.h
+END
+IOpenNoCaptchaComponent.h
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/repos/verifywireless/!svn/ver/1455/trunk/rpsdk-ios/Libs/notb/SecurityGuardSDK.framework/Headers/Open/OpenNoCaptcha/IOpenNoCaptchaComponent.h
+END

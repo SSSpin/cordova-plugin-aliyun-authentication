@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/repos/verifywireless/!svn/ver/1455/trunk/rpsdk-ios/Libs/notb/SecurityGuardSDK.framework/Headers/Open/OpenSecurityBody
+END
+OpenSecurityBodyDefine.h
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/repos/verifywireless/!svn/ver/1455/trunk/rpsdk-ios/Libs/notb/SecurityGuardSDK.framework/Headers/Open/OpenSecurityBody/OpenSecurityBodyDefine.h
+END
+IOpenSecurityBodyComponent.h
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/repos/verifywireless/!svn/ver/1455/trunk/rpsdk-ios/Libs/notb/SecurityGuardSDK.framework/Headers/Open/OpenSecurityBody/IOpenSecurityBodyComponent.h
+END

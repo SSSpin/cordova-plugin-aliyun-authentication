@@ -18,22 +18,16 @@
             <uses-permission android:name="android.permission.INTERNET" />
             <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
         </config-file>
-        
         <source-file src="src/android/AliyunVerify.java" target-dir="src/com/aliyun/cordova/verify" />
-
         <resource-file src="src/android/libs/aliyun-oss-sdk-android-2.2.0.jar" target="../../libs/aliyun-oss-sdk-android-2.2.0.jar" />
         <resource-file src="src/android/libs/okhttp-3.2.0.jar" target="../../libs/okhttp-3.2.0.jar" />
         <resource-file src="src/android/libs/okio-1.6.0.jar" target="../../libs/okio-1.6.0.jar" />
         <resource-file src="src/android/libs/windvane-min-8.0.3.2.3.jar" target="../../libs/windvane-min-8.0.3.2.3.jar" />
-
-
-
         <resource-file src="src/android/libs/FaceLivenessOpen-2.1.6.9.aar" target="../../libs/FaceLivenessOpen-2.1.6.9.aar" />
         <resource-file src="src/android/libs/rpsdk-release_2.4.0.2.aar" target="../../libs/rpsdk-release_2.4.0.2.aar" />
         <resource-file src="src/android/libs/NoCaptchaSDK-external-release-5.4.18.aar" target="../../libs/NoCaptchaSDK-external-release-5.4.18.aar" />
         <resource-file src="src/android/libs/SecurityGuardSDK-external-release-5.4.38.aar" target="../../libs/SecurityGuardSDK-external-release-5.4.38.aar" />
         <resource-file src="src/android/libs/SecurityBodySDK-external-release-5.4.28.aar" target="../../libs/SecurityBodySDK-external-release-5.4.28.aar" />
-
     </platform>
     <platform name="ios">
         <config-file parent="/*" target="config.xml">
@@ -49,8 +43,22 @@
         <header-file src="src/ios/AliyunVerify.h" />
         <source-file src="src/ios/AliyunVerify.m" />
         <!-- assets -->
-        
+        <asset src="src/ios/libs/FaceLivenessSDK.bundle" target="FaceLivenessSDK.bundle" />
+        <asset src="src/ios/libs/FaceTheme.bundle" target="FaceTheme.bundle" />
+        <asset src="src/ios/libs/RPSDK.bundle" target="RPSDK.bundle" /> \
         <!-- framework -->
-    
+        <framework src="src/ios/libs/AliReachability.framework" />
+        <framework src="src/ios/libs/AliyunOSSiOS.framework" />
+        <framework src="src/ios/libs/FaceLivenessOpen.framework" />
+        <framework src="src/ios/libs/RPSDK.framework" />
+        <framework src="src/ios/libs/SecurityGuardSDK.framework" />
+        <framework src="src/ios/libs/SGMain.framework" />
+        <framework src="src/ios/libs/SGNoCaptcha.framework" />
+        <framework src="src/ios/libs/SGSecurityBody.framework" />
+        <framework src="src/ios/libs/WindVane.framework" />
+        <framework src="src/ios/libs/WindVaneBasic.framework" />
+        <framework src="src/ios/libs/WindVaneBridge.framework" />
+        <framework src="src/ios/libs/WindVaneCore.framework" />
+        <framework src="src/ios/libs/ZipArchive.framework" />
     </platform>
 </plugin>

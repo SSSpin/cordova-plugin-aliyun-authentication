@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/repos/verifywireless/!svn/ver/1458/trunk/rpsdk-ios/Libs/notb/SGSecurityBody.framework/Headers
+END
+ISecurityGuardOpenSecurityBody.h
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/repos/verifywireless/!svn/ver/1458/trunk/rpsdk-ios/Libs/notb/SGSecurityBody.framework/Headers/ISecurityGuardOpenSecurityBody.h
+END
+ISecurityGuardOpenSimulatorDetect.h
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/repos/verifywireless/!svn/ver/1458/trunk/rpsdk-ios/Libs/notb/SGSecurityBody.framework/Headers/ISecurityGuardOpenSimulatorDetect.h
+END
+SGSecurityBody.h
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/repos/verifywireless/!svn/ver/1458/trunk/rpsdk-ios/Libs/notb/SGSecurityBody.framework/Headers/SGSecurityBody.h
+END
+ISecurityGuardOpenJAQVerification.h
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/repos/verifywireless/!svn/ver/1458/trunk/rpsdk-ios/Libs/notb/SGSecurityBody.framework/Headers/ISecurityGuardOpenJAQVerification.h
+END

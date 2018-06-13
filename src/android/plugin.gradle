@@ -24,4 +24,3 @@ dependencies {
     compile (name:'SecurityBodySDK-external-release-5.4.28',ext:'aar')
     compile (name:'NoCaptchaSDK-external-release-5.4.18',ext:'aar')
 }
-

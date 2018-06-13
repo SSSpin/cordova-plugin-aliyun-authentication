@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/repos/verifywireless/!svn/ver/1455/trunk/rpsdk-ios/Libs/notb/SecurityGuardSDK.framework/Headers/Open/OpenStaticKeyEncrypt
+END
+OpenStaticKeyEncryptDefine.h
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/repos/verifywireless/!svn/ver/1455/trunk/rpsdk-ios/Libs/notb/SecurityGuardSDK.framework/Headers/Open/OpenStaticKeyEncrypt/OpenStaticKeyEncryptDefine.h
+END
+IOpenStaticKeyEncryptComponent.h
+K 25
+svn:wc:ra_dav:version-url
+V 155
+/repos/verifywireless/!svn/ver/1455/trunk/rpsdk-ios/Libs/notb/SecurityGuardSDK.framework/Headers/Open/OpenStaticKeyEncrypt/IOpenStaticKeyEncryptComponent.h
+END
