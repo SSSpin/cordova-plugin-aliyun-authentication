@@ -28,11 +28,11 @@
 
 
 
-        <resource-file src="src/android/libs/FaceLivenessOpen-2.1.6.9.aar" target="../../FaceLivenessOpen-2.1.6.9.aar" />
-        <resource-file src="src/android/libs/rpsdk-release_2.4.0.2.aar" target="../../rpsdk-release_2.4.0.2.aar" />
-        <resource-file src="src/android/libs/NoCaptchaSDK-external-release-5.4.18.aar" target="../../NoCaptchaSDK-external-release-5.4.18.aar" />
-        <resource-file src="src/android/libs/SecurityGuardSDK-external-release-5.4.38.aar" target="../../SecurityGuardSDK-external-release-5.4.38.aar" />
-        <resource-file src="src/android/libs/SecurityBodySDK-external-release-5.4.28.aar" target="../../SecurityBodySDK-external-release-5.4.28.aar" />
+        <resource-file src="src/android/libs/FaceLivenessOpen-2.1.6.9.aar" target="../../libs/FaceLivenessOpen-2.1.6.9.aar" />
+        <resource-file src="src/android/libs/rpsdk-release_2.4.0.2.aar" target="../../libs/rpsdk-release_2.4.0.2.aar" />
+        <resource-file src="src/android/libs/NoCaptchaSDK-external-release-5.4.18.aar" target="../../libs/NoCaptchaSDK-external-release-5.4.18.aar" />
+        <resource-file src="src/android/libs/SecurityGuardSDK-external-release-5.4.38.aar" target="../../libs/SecurityGuardSDK-external-release-5.4.38.aar" />
+        <resource-file src="src/android/libs/SecurityBodySDK-external-release-5.4.28.aar" target="../../libs/SecurityBodySDK-external-release-5.4.28.aar" />
 
     </platform>
     <platform name="ios">

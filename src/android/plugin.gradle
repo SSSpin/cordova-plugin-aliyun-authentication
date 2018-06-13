@@ -6,7 +6,7 @@ repositories {
     }
 }
 
-defaultConfig {
+android.defaultConfig {
     ndk {
         abiFilters "armeabi", "x86"
     }
